@@ -11,7 +11,6 @@ function SearchBar({ setSearchQuery }) {
     <div>
       <Search
         placeholder="input search text"
-        allowClear
         onSearch={onSearch}
         style={{
           width: 200,

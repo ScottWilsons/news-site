@@ -17,17 +17,20 @@ function App() {
       );
       const data = await response.json();
       setarticleData(data.articles);
+      console.log(articleData);
     }
     FetchStories();
   }, [searchQuery]);
-  console.log(articleData);
 
   return (
     <div className="App">
+      <h1>Welcome to Scottville NEWS</h1>
       <SearchBar setSearchQuery={setSearchQuery} />
-      {articleData.map((article) => {
-        return <NewsBox article={article} />;
-      })}
+      <div className="Article-container">
+        {articleData.map((article) => {
+          return <NewsBox article={article} />;
+        })}
+      </div>
     </div>
   );
 }
