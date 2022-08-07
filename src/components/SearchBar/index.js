@@ -10,10 +10,10 @@ function SearchBar({ setSearchQuery }) {
   return (
     <div>
       <Search
-        placeholder="input search text"
+        placeholder="Search NEWS"
         onSearch={onSearch}
         style={{
-          width: 200,
+          width: 340,
         }}
       />
     </div>

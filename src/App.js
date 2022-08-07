@@ -1,8 +1,8 @@
 import React from "react";
 import { useState, useEffect } from "react";
 
-import SearchBar from "./components/SearchBar";
 import NewsBox from "./components/NewsBox";
+import NavBar from "./components/NavBar";
 
 import "./App.css";
 
@@ -13,7 +13,7 @@ function App() {
   useEffect(() => {
     async function FetchStories() {
       const response = await fetch(
-        `https://gnews.io/api/v4/search?q=${searchQuery}&token=${process.env.REACT_APP_API_KEY}`
+        `https://gnews.io/api/v4/search?q=${searchQuery}&lang=en&token=${process.env.REACT_APP_API_KEY}`
       );
       const data = await response.json();
       setarticleData(data.articles);
@@ -24,8 +24,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Welcome to Scottville NEWS</h1>
-      <SearchBar setSearchQuery={setSearchQuery} />
+      <NavBar setSearchQuery={setSearchQuery} />
       <div className="Article-container">
         {articleData.map((article) => {
           return <NewsBox article={article} />;

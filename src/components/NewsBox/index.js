@@ -25,7 +25,7 @@ function NewsBox({ article }) {
       style={{
         width: 340,
       }}
-      cover={<img alt="article image" src={article.image} />}
+      cover={<img alt="article" src={article.image} />}
     >
       <Meta title={article.title} description={article.description} />
       <Button type="primary" onClick={showModal}>
